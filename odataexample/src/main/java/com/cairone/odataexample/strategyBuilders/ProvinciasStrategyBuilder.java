@@ -134,6 +134,7 @@ public class ProvinciasStrategyBuilder {
                 String field = propertyCriteriaValue.getPropertyName().trim().toUpperCase();
                 Object value = literalCriteriaValue.getValue();
                 
+                
                 switch(field)
                 {
                 case "ID":
