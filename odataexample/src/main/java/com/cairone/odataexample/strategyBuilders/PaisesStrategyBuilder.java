@@ -9,6 +9,8 @@ import org.springframework.data.domain.Sort.Direction;
 
 import scala.collection.Iterator;
 
+import scala.math.BigDecimal;
+
 import com.cairone.odataexample.entities.QPaisEntity;
 import com.mysema.query.types.expr.BooleanExpression;
 import com.sdl.odata.api.ODataException;
@@ -136,7 +138,7 @@ public class PaisesStrategyBuilder {
                 {
                 case "ID":
                 {
-                	Integer idValue = (Integer) value;
+                	Integer idValue = ((BigDecimal) value).intValue();
                 	BooleanExpression exp = qPais.id.eq(idValue);
                 	this.expression = this.expression == null ? exp : this.expression.and(exp);
                 	break;
